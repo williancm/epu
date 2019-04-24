@@ -18,4 +18,9 @@ public class TurmaResource {
     public List<Turma> listAll(){
         return turmaRepository.findAll();
     }
+
+    @GetMapping ("/{id}")
+    public Turma findOne(@PathVariable int id){
+        return turmaRepository.findById(id).get();
+    }
 }

@@ -30,6 +30,6 @@ public @Data class Turma {
     private Set<Aluno> alunos;
 
     //N:N
-    //@ManyToMany(mappedBy = "turma")
-    //private Set<Prof> profs;
+    @ManyToMany(mappedBy = "turmas")
+    private Set<Prof> profs;
 }

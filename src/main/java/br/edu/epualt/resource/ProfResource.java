@@ -19,4 +19,9 @@ public class ProfResource {
     public List<Prof> listAll(){
         return profRepository.findAll();
     }
+
+    @GetMapping ("/{id}")
+    public Prof findOne(@PathVariable int id){
+        return profRepository.findById(id).get();
+    }
 }

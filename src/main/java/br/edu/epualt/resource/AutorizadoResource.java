@@ -18,4 +18,9 @@ public class AutorizadoResource {
     public List<Autorizado> listAll(){
         return autorizadoRepository.findAll();
     }
+
+    @GetMapping ("/{id}")
+    public Autorizado findOne(@PathVariable int id){
+        return autorizadoRepository.findById(id).get();
+    }
 }

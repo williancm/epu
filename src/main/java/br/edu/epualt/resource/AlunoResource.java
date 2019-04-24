@@ -18,5 +18,10 @@ public class AlunoResource {
     public List<Aluno> listAll(){
         return alunoRepository.findAll();
     }
+
+    @GetMapping ("/{id}")
+    public Aluno findOne(@PathVariable int id){
+        return alunoRepository.findById(id).get();
+    }
 }
 

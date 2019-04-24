@@ -18,4 +18,9 @@ public class RegistroResource {
     public List<Registro> listAll(){
         return registroRepository.findAll();
     }
+
+    @GetMapping ("/{id}")
+    public Registro findOne(@PathVariable int id){
+        return registroRepository.findById(id).get();
+    }
 }

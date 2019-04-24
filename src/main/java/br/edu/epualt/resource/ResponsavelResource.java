@@ -21,5 +21,10 @@ public class ResponsavelResource {
     public List<Responsavel> listAll(){
         return responsavelRepository.findAll();
     }
+
+    @GetMapping ("/{id}")
+    public Responsavel findOne(@PathVariable int id){
+        return responsavelRepository.findById(id).get();
+    }
 }
 
