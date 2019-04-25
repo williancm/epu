@@ -29,7 +29,7 @@ INSERT INTO autorizado (nome, cpf, telefone, relacao, foto, aluno_id, responsave
   ('Ricardo',  '041.809.700-33', '53984577633', 'Mãe',   'mae.jpg',   5, 3),
   ('Henrique', '641.809.700-44', '53984577633', 'Dindo', 'dindo.jpg', 5, 3);
 
-INSERT INTO prof (nome, emailInst, senha, cpf, telefone, foto) VALUES
+INSERT INTO prof (nome, email_inst, senha, cpf, telefone, foto) VALUES
   ('Maisa Silva',       'maisasilva@marioquintana.com.br',    'padrao', '123.456.789-10', '53999887766', 'maisa.jpg'),
   ('Marielen Cardoso',  'maricardoso@marioquintana.com.br',   'padrao', '321.456.789-10', '53999557722', 'mari.jpg'),
   ('Juliana Carvalho',  'jucarvalho@marioquintana.com.br',    'padrao', '333.456.789-10', '53977887766', 'juliana.jpg'),
