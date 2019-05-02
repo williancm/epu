@@ -47,7 +47,7 @@ public @Data class Prof{
     private Set<Registro> registros;
 
     //N:N
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER) //solucao erro tabela registro. fetch = FetchType.EAGER
     @JoinTable(
             name = "prof_turma",
             joinColumns = {@JoinColumn(name = "prof_id", referencedColumnName = "id")},

@@ -12,6 +12,8 @@ Easy Pick-Up é um sistema de gerenciamento de pessoas e horários. A ideia surg
 *  Informar a hora exata que a criança foi embora e com quem;
 *  Agilizar o processo de autorização de terceiros por parte dos pais.
 
+
+
 ## Ferramentas utilizadas:
 *  Java
 *  Spring Boot

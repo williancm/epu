@@ -26,10 +26,10 @@ public @Data class Registro {
 
     //Relacionamentos:
     //N:1
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne
     private @Valid Aluno aluno;
 
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne
     private @Valid Autorizado autorizado;
 
     @ManyToOne
