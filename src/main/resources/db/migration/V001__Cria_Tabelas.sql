@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS turma (
     sala VARCHAR(10) NOT NULL
 )ENGINE = InnoDB;
 
-CREATE TABLE IF NOT EXISTS aluno (
+CREATE TABLE aluno (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
     nascimento DATE NOT NULL,
@@ -50,7 +50,7 @@ CREATE TABLE IF NOT EXISTS prof (
     foto TINYBLOB NOT NULL
 )ENGINE = InnoDB;
 
-CREATE TABLE IF NOT EXISTS registro (
+CREATE TABLE registro (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     dia DATETIME NOT NULL,
     autorizado_id INT NOT NULL,
@@ -61,7 +61,7 @@ CREATE TABLE IF NOT EXISTS registro (
     FOREIGN KEY (aluno_id)      REFERENCES aluno (id)
 )ENGINE = InnoDB;
 
-CREATE TABLE IF NOT EXISTS prof_turma (
+CREATE TABLE prof_turma (
     turma_id INT NOT NULL,
     prof_id INT NOT NULL,
     FOREIGN KEY (turma_id) REFERENCES turma (id),

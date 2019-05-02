@@ -35,10 +35,10 @@ public @Data class Aluno {
 
     //Relacionamentos:
     //N:1
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne
     private @Valid Turma turma;
 
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne
     private @Valid Responsavel responsavel;
 
     //1:N

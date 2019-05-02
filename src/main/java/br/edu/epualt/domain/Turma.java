@@ -31,5 +31,6 @@ public @Data class Turma {
 
     //N:N
     @ManyToMany(mappedBy = "turmas")
+    @JsonIgnore
     private Set<Prof> profs;
 }

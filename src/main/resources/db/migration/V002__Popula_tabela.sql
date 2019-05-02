@@ -37,6 +37,14 @@ INSERT INTO prof (nome, email_inst, senha, cpf, telefone, foto) VALUES
   ('Marcia Tavares',    'marciatavares@marioquintana.com.br', 'padrao', '999.456.789-10', '53996556677', 'marcia.jpg'),
   ('Júlia Bittencourt', 'juliabitten@marioquintana.com.br',   'padrao', '777.456.789-48', '53999484497', 'julia.jpg');
 
+INSERT INTO prof_turma (turma_id, prof_id) VALUES
+  (3, 1),
+  (3, 2),
+  (4, 3),
+  (4, 4),
+  (5, 5),
+  (5, 6);
+
 INSERT INTO registro (dia, autorizado_id, prof_id, aluno_id) VALUES
   ('2019-04-15 11:31:06', 1,  1, 1),
   ('2019-04-15 11:32:06', 4,  1, 2),
@@ -53,11 +61,3 @@ INSERT INTO registro (dia, autorizado_id, prof_id, aluno_id) VALUES
   ('2019-04-19 11:31:31', 6,  5, 3),
   ('2019-04-19 11:33:51', 8,  5, 4),
   ('2019-04-19 11:35:51', 9,  5, 5);
-
-INSERT INTO prof_turma (turma_id, prof_id) VALUES
-  (3, 1),
-  (3, 2),
-  (4, 3),
-  (4, 4),
-  (5, 5),
-  (5, 6);

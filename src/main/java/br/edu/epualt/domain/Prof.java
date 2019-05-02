@@ -5,6 +5,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
+import java.util.List;
 import java.util.Set;
 
 
@@ -46,11 +47,12 @@ public @Data class Prof{
     private Set<Registro> registros;
 
     //N:N
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany
     @JoinTable(
             name = "prof_turma",
             joinColumns = {@JoinColumn(name = "prof_id", referencedColumnName = "id")},
             inverseJoinColumns = {@JoinColumn(name = "turma_id", referencedColumnName = "id")}
     )
-    private Set<Turma> turmas;
+    private List<Turma> turmas;
+
 }

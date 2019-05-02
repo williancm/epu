@@ -32,7 +32,7 @@ public @Data class Registro {
     @ManyToOne(cascade = CascadeType.PERSIST)
     private @Valid Autorizado autorizado;
 
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne
     private @Valid Prof prof;
 
 }
