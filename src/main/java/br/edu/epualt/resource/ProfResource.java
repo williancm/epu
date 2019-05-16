@@ -6,6 +6,7 @@ import br.edu.epualt.repository.ProfRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -24,4 +25,8 @@ public class ProfResource {
     public Prof findOne(@PathVariable int id){
         return profRepository.findById(id).get();
     }
+
+    @PostMapping
+    public Prof save(@Valid @RequestBody Prof prof){ return profRepository.save(prof);}
+
 }

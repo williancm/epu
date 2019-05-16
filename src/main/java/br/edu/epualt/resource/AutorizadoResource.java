@@ -1,10 +1,12 @@
 package br.edu.epualt.resource;
 
 import br.edu.epualt.domain.Autorizado;
+import br.edu.epualt.domain.Prof;
 import br.edu.epualt.repository.AutorizadoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -23,4 +25,7 @@ public class AutorizadoResource {
     public Autorizado findOne(@PathVariable int id){
         return autorizadoRepository.findById(id).get();
     }
+
+    @PostMapping
+    public Autorizado save(@Valid @RequestBody Autorizado autorizado){ return autorizadoRepository.save(autorizado);}
 }
