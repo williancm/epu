@@ -28,5 +28,18 @@ public class AlunoResource {
 
     @PostMapping
     public Aluno save(@Valid @RequestBody Aluno aluno){ return alunoRepository.save(aluno);}
+
+    @DeleteMapping("/{id}")
+    public void remover(@PathVariable int id) {
+        Aluno uc = alunoRepository.findById(id).get();
+        alunoRepository.delete(uc);
+    }
+
+    @PutMapping
+    public ResponseEntity<Aluno> editar(@Valid @RequestBody Aluno aluno) {
+        Aluno content = alunoRepository.save(conteudo);
+        return new ResponseEntity<Aluno>(content, HttpStatus.OK);
+
+    }
 }
 

@@ -28,4 +28,17 @@ public class RegistroResource {
 
     @PostMapping
     public Registro save(@Valid @RequestBody Registro registro){ return registroRepository.save(registro);}
+
+    @DeleteMapping("/{id}")
+    public void remover(@PathVariable int id) {
+        Registro uc = registroRepository.findById(id).get();
+        registroRepository.delete(uc);
+    }
+
+    @PutMapping
+    public ResponseEntity<Registro> editar(@Valid @RequestBody Registro registro) {
+        Registro content = registroRepository.save(conteudo);
+        return new ResponseEntity<Registro>(content, HttpStatus.OK);
+
+    }
 }

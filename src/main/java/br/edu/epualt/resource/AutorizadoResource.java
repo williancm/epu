@@ -28,4 +28,17 @@ public class AutorizadoResource {
 
     @PostMapping
     public Autorizado save(@Valid @RequestBody Autorizado autorizado){ return autorizadoRepository.save(autorizado);}
+
+    @DeleteMapping("/{id}")
+    public void remover(@PathVariable int id) {
+        Autorizado uc = autorizadoRepository.findById(id).get();
+        autorizadoRepository.delete(uc);
+    }
+
+    @PutMapping
+    public ResponseEntity<Autorizado> editar(@Valid @RequestBody Autorizado autorizado) {
+        Autorizado content = autorizadoRepository.save(conteudo);
+        return new ResponseEntity<Autorizado>(content, HttpStatus.OK);
+
+    }
 }

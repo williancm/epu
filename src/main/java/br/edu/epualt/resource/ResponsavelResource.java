@@ -29,5 +29,18 @@ public class ResponsavelResource {
 
     @PostMapping
     public Responsavel save(@Valid @RequestBody Responsavel responsavel){ return responsavelRepository.save(responsavel);}
+
+    @DeleteMapping("/{id}")
+    public void remover(@PathVariable int id) {
+        Responsavel uc = responsavelRepository.findById(id).get();
+        responsavelRepository.delete(uc);
+    }
+
+    @PutMapping
+    public ResponseEntity<Responsavel> editar(@Valid @RequestBody Responsavel responsavel) {
+        Responsavel content = responsavelRepository.save(conteudo);
+        return new ResponseEntity<Responsavel>(content, HttpStatus.OK);
+
+    }
 }
 

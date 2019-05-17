@@ -28,4 +28,17 @@ public class TurmaResource {
 
     @PostMapping
     public Turma save(@Valid @RequestBody Turma turma){ return turmaRepository.save(turma);}
+
+    @DeleteMapping("/{id}")
+    public void remover(@PathVariable int id) {
+        Turma uc = turmaRepository.findById(id).get();
+        turmaRepository.delete(uc);
+    }
+
+    @PutMapping
+    public ResponseEntity<Turma> editar(@Valid @RequestBody Turma turma) {
+        Turma content = turmaRepository.save(conteudo);
+        return new ResponseEntity<Turma>(content, HttpStatus.OK);
+
+    }
 }

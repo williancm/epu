@@ -29,4 +29,17 @@ public class ProfResource {
     @PostMapping
     public Prof save(@Valid @RequestBody Prof prof){ return profRepository.save(prof);}
 
+
+    @DeleteMapping("/{id}")
+    public void remover(@PathVariable int id) {
+        Prof uc = profRepository.findById(id).get();
+        profRepository.delete(uc);
+    }
+
+    @PutMapping
+    public ResponseEntity<Prof> editar(@Valid @RequestBody Prof prof) {
+        Prof content = profRepository.save(conteudo);
+        return new ResponseEntity<Prof>(content, HttpStatus.OK);
+
+    }
 }
