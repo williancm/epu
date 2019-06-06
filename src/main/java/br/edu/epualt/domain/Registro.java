@@ -35,4 +35,43 @@ public @Data class Registro {
     @ManyToOne
     private @Valid Prof prof;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Timestamp getDia() {
+        return dia;
+    }
+
+    public void setDia(Timestamp dia) {
+        this.dia = dia;
+    }
+
+    public Aluno getAluno() {
+        return aluno;
+    }
+
+    public void setAluno(Aluno aluno) {
+        this.aluno = aluno;
+    }
+
+    public Autorizado getAutorizado() {
+        return autorizado;
+    }
+
+    public void setAutorizado(Autorizado autorizado) {
+        this.autorizado = autorizado;
+    }
+
+    public Prof getProf() {
+        return prof;
+    }
+
+    public void setProf(Prof prof) {
+        this.prof = prof;
+    }
 }

@@ -4,6 +4,8 @@ package br.edu.epualt.resource;
 import br.edu.epualt.domain.Prof;
 import br.edu.epualt.repository.ProfRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -38,8 +40,15 @@ public class ProfResource {
 
     @PutMapping
     public ResponseEntity<Prof> editar(@Valid @RequestBody Prof prof) {
-        Prof content = profRepository.save(conteudo);
+        Prof content = profRepository.save(prof);
         return new ResponseEntity<Prof>(content, HttpStatus.OK);
 
     }
+/*
+    @GetMapping ("/{id}")
+    public Prof findOneByNome(@PathVariable String nome){
+        return profRepository.findByNome(nome).get();
+    }
+
+ */
 }

@@ -33,4 +33,44 @@ public @Data class Turma {
     @ManyToMany(mappedBy = "turmas")
     @JsonIgnore
     private Set<Prof> profs;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getNivel() {
+        return nivel;
+    }
+
+    public void setNivel(String nivel) {
+        this.nivel = nivel;
+    }
+
+    public String getSala() {
+        return sala;
+    }
+
+    public void setSala(String sala) {
+        this.sala = sala;
+    }
+
+    public Set<Aluno> getAlunos() {
+        return alunos;
+    }
+
+    public void setAlunos(Set<Aluno> alunos) {
+        this.alunos = alunos;
+    }
+
+    public Set<Prof> getProfs() {
+        return profs;
+    }
+
+    public void setProfs(Set<Prof> profs) {
+        this.profs = profs;
+    }
 }

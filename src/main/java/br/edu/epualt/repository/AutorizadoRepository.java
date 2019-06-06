@@ -8,4 +8,6 @@ import org.springframework.stereotype.Repository;
 public interface AutorizadoRepository extends
         JpaRepository<Autorizado, Integer> {
 
+    Autorizado getAutorizadoNome(String nome);
+
 }

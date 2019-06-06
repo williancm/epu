@@ -4,6 +4,8 @@ import br.edu.epualt.domain.Autorizado;
 import br.edu.epualt.domain.Prof;
 import br.edu.epualt.repository.AutorizadoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -37,8 +39,15 @@ public class AutorizadoResource {
 
     @PutMapping
     public ResponseEntity<Autorizado> editar(@Valid @RequestBody Autorizado autorizado) {
-        Autorizado content = autorizadoRepository.save(conteudo);
+        Autorizado content = autorizadoRepository.save(autorizado);
         return new ResponseEntity<Autorizado>(content, HttpStatus.OK);
 
     }
+/*
+    @RequestMapping(value = "/{nome}", method = RequestMethod.GET)
+    public Autorizado findByNome(@PathVariable("nome") String nome){
+        return autorizadoRepository.getAutorizadoNome(nome);
+    }
+    
+ */
 }

@@ -4,6 +4,8 @@ import br.edu.epualt.domain.Aluno;
 import br.edu.epualt.domain.Prof;
 import br.edu.epualt.repository.AlunoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -37,9 +39,16 @@ public class AlunoResource {
 
     @PutMapping
     public ResponseEntity<Aluno> editar(@Valid @RequestBody Aluno aluno) {
-        Aluno content = alunoRepository.save(conteudo);
+        Aluno content = alunoRepository.save(aluno);
         return new ResponseEntity<Aluno>(content, HttpStatus.OK);
 
     }
+/*
+    @GetMapping ("/{id}")
+    public Aluno findOneByNome(@PathVariable String nome){
+        return alunoRepository.findByNome(nome).get();
+    }
+
+ */
 }
 

@@ -5,6 +5,8 @@ import br.edu.epualt.domain.Responsavel;
 
 import br.edu.epualt.repository.ResponsavelRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -38,9 +40,16 @@ public class ResponsavelResource {
 
     @PutMapping
     public ResponseEntity<Responsavel> editar(@Valid @RequestBody Responsavel responsavel) {
-        Responsavel content = responsavelRepository.save(conteudo);
+        Responsavel content = responsavelRepository.save(responsavel);
         return new ResponseEntity<Responsavel>(content, HttpStatus.OK);
 
     }
+/*
+    @GetMapping ("/{id}")
+    public Responsavel findOneByNome(@PathVariable String nome){
+        return responsavelRepository.findByNome(nome).get();
+    }
+
+ */
 }
 

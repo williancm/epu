@@ -4,6 +4,8 @@ import br.edu.epualt.domain.Responsavel;
 import br.edu.epualt.domain.Turma;
 import br.edu.epualt.repository.TurmaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -37,8 +39,15 @@ public class TurmaResource {
 
     @PutMapping
     public ResponseEntity<Turma> editar(@Valid @RequestBody Turma turma) {
-        Turma content = turmaRepository.save(conteudo);
+        Turma content = turmaRepository.save(turma);
         return new ResponseEntity<Turma>(content, HttpStatus.OK);
 
     }
+/*
+    @GetMapping ("/{id}")
+    public Turma findOneByNome(@PathVariable String nome){
+        return turmaRepository.findByNome(nome).get();
+    }
+
+ */
 }

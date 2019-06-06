@@ -49,4 +49,76 @@ public @Data class Aluno {
     @OneToMany(mappedBy = "aluno")
     @JsonIgnore
     private Set<Registro> registros;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public Date getNascimento() {
+        return nascimento;
+    }
+
+    public void setNascimento(Date nascimento) {
+        this.nascimento = nascimento;
+    }
+
+    public String getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
+    }
+
+    public byte[] getFoto() {
+        return foto;
+    }
+
+    public void setFoto(byte[] foto) {
+        this.foto = foto;
+    }
+
+    public Turma getTurma() {
+        return turma;
+    }
+
+    public void setTurma(Turma turma) {
+        this.turma = turma;
+    }
+
+    public Responsavel getResponsavel() {
+        return responsavel;
+    }
+
+    public void setResponsavel(Responsavel responsavel) {
+        this.responsavel = responsavel;
+    }
+
+    public Set<Autorizado> getAutorizados() {
+        return autorizados;
+    }
+
+    public void setAutorizados(Set<Autorizado> autorizados) {
+        this.autorizados = autorizados;
+    }
+
+    public Set<Registro> getRegistros() {
+        return registros;
+    }
+
+    public void setRegistros(Set<Registro> registros) {
+        this.registros = registros;
+    }
 }
